@@ -1,0 +1,18 @@
+El Problema: Un equipo de mantenimiento predictivo monitorea turbinas industriales. 
+Los sensores registran decenas de variables, pero muchas son casi constantes (baja varianza) o redundantes. 
+Antes de entrenar el modelo de predicción del desgaste (una variable continua), 
+quieres: (a) eliminar características de baja varianza, y (b) escalar los datos al rango [0, 1]. 
+Luego deseas estimar el desgaste usando una Regresión Bayesiana (BayesianRidge), 
+que incorpora incertidumbre en los coeficientes y es robusta cuando los datos son escasos.
+
+Tu Misión: Escribe una función llamada predecir_desgaste(X, y, umbral_varianza=0.01) que:
+
+1.Aplique VarianceThreshold(threshold=umbral_varianza) de sklearn para eliminar columnas de baja varianza.
+2.Escale las características resultantes al rango [0, 1] con MinMaxScaler.
+3.Entrene un BayesianRidge sobre los datos procesados.
+4.Devuelva un diccionario con:
+'n_features_originales' : int — número de columnas en X
+'n_features_seleccionadas': int — columnas tras VarianceThreshold
+'r2_train' : float (4 dec.) — R² sobre los datos de entrenamiento
+'coeficientes' : numpy array con los coeficientes del modelo
+Librerías permitidas: numpy, sklearn.
