@@ -1,0 +1,24 @@
+El Problema:
+Un equipo de ciencia de datos está evaluando un modelo de regresión para
+predecir el consumo energético de edificios. Para garantizar que el modelo
+generalice bien, quieres evaluar si el GradientBoostingRegressor sufre de
+overfitting comparando el RMSE en train versus el RMSE en test. La brecha entre
+ambos determina el diagnóstico.
+ 
+Tu Misión:
+Escribe una función llamada diagnosticar_regresion_gbm(df, target_col,
+test_size=0.2, random_state=42) que:
+1. Separe X (todas las columnas numéricas excepto target_col) e y con pandas.
+2. Impute valores faltantes en X usando SimpleImputer(strategy='median').
+3. Divida en train/test con los parámetros dados.
+4. Entrene un GradientBoostingRegressor(random_state=random_state) sobre train.
+5. Calcule el RMSE sobre train y sobre test usando numpy.
+6. Emita un diagnóstico automático:
+   - 'overfitting'  si rmse_test > 1.5 * rmse_train
+   - 'buen_ajuste'  en cualquier otro caso
+7. Devuelva un diccionario con:
+   - 'rmse_train'  : float (4 dec.)
+   - 'rmse_test'   : float (4 dec.)
+   - 'diagnostico' : str
+ 
+Librerías permitidas: pandas, numpy, sklearn.
