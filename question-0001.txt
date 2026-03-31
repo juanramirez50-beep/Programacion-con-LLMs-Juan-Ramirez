@@ -1,0 +1,16 @@
+El Problema: Eres analista de datos en una plataforma de streaming de video. Cada vez que un usuario inicia una sesión, 
+el sistema registra el dispositivo utilizado (mobile, tablet, desktop) y el tiempo de visualización en minutos. 
+Sin embargo, las sesiones muy cortas (< 1 minuto) se consideran rebotes y no aportan valor al análisis. 
+Además, la plataforma quiere identificar qué dispositivo concentra mayor retención de usuarios, 
+definida como el porcentaje de sesiones que superan los 10 minutos dentro de cada tipo de dispositivo.
+
+Tu Misión: Escribe una función llamada analizar_retencion_por_dispositivo(df) que realice lo siguiente:
+
+1-Elimine las filas donde 'tiempo_minutos' sea menor a 1 (rebotes).
+2-Cree una columna booleana 'es_retenido' que valga True si 'tiempo_minutos' > 10.
+3-Agrupe por 'dispositivo' y calcule:
+'sesiones_validas' : total de sesiones tras eliminar rebotes
+'tasa_retencion' : proporción de sesiones retenidas (float entre 0 y 1, redondeado a 4 decimales)
+'tiempo_promedio' : promedio de 'tiempo_minutos' (redondeado a 2 decimales)
+4-Devuelva un DataFrame con esas tres columnas, ordenado de mayor a menor 'tasa_retencion' y con el índice reiniciado.
+Librerías permitidas: pandas, numpy.
