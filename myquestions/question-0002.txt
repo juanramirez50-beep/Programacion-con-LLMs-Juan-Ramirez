@@ -1,0 +1,17 @@
+El Problema: Trabajas en el equipo de calidad de un laboratorio farmacéutico. 
+Cada lote de producción se evalúa con varios tests de control (pureza, concentración, viscosidad, pH…). 
+Algunos tests fallan por problemas del equipo y quedan como NaN. 
+El laboratorio aplica una regla de aprobación: un lote se aprueba si el promedio de sus valores no-nulos supera 
+un umbral mínimo definido por la mediana global de cada test (calculada sobre todos los lotes).
+
+Tu Misión: Escribe una función llamada evaluar_lotes(df, id_col) que realice lo siguiente:
+
+1.Tome un DataFrame donde cada fila es un lote (identificado por id_col) y las demás columnas son tests numéricos (pueden tener NaN).
+2.Para cada columna de test, calcule la mediana global (ignorando NaN).
+3.Para cada lote, calcule el promedio de sus valores no-nulos.
+4.Un lote "aprueba" si su promedio es estrictamente mayor que la mediana global promedio de todos los tests.
+5.Devuelva un DataFrame con columnas:
+id_col : identificador del lote
+'promedio_lote' : promedio de los valores no-nulos del lote (float, 4 dec.)
+'aprueba' : booleano
+Librerías permitidas: pandas, numpy.
