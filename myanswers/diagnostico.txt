@@ -1,0 +1,7 @@
+El problema dice claramente 
+Escribe una función llamada reparar_sensores_logistica(df, n_vecinos)
+
+y el error que arroja la validacion
+"reparar_sensores_logistica() missing 2 required positional arguments: 'df' and 'n_vecinos'"
+Esto significa que el entorno de validación automático está intentando invocar la función objetivo completamente vacía, sin pasarle ningún parámetro.
+Entonces el error es que se estan arrojando estos datos sin valores
